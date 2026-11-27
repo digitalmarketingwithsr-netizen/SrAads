@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade With Sudarshan — Market Education</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2088595861793111');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        :root {
+            --bg-main: #0b111a;
+            --surface: #121b27;
+            --surface-soft: #182332;
+            --border: #243246;
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --accent: #10b981;
+            --gold: #eab308;
+            --text-main: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #132033 0%, var(--bg-main) 65%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 440px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Top Status Row */
+        .top-strip {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-bottom: 22px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Profile Header */
+        .profile-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar-wrap {
+            position: relative;
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 12px;
+        }
+
+        .avatar-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            background: var(--surface-soft);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 20%;
+            transform: scale(1.12);
+            display: block;
+        }
+
+        .check-pill {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            border: 2px solid var(--surface);
+        }
+
+        .brand-title {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .brand-tagline {
+            font-size: 11px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .hero-desc {
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: var(--text-secondary);
+        }
+
+        /* Trust Highlights */
+        .trust-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 18px 0 20px;
+        }
+
+        .trust-item {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 6px;
+            text-align: center;
+        }
+
+        .trust-val {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .trust-lbl {
+            font-size: 10.5px;
+            color: var(--text-muted);
+        }
+
+        /* Primary CTA */
+        .join-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px 18px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #ffffff;
+            font-size: 14.5px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(14, 165, 233, 0.28);
+            transition: transform 0.15s ease, filter 0.15s ease;
+        }
+
+        .join-btn:hover {
+            filter: brightness(1.06);
+        }
+
+        .join-btn:active {
+            transform: scale(0.99);
+        }
+
+        .join-note {
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Syllabus / Modules */
+        .section-label {
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .module-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .module-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+
+        .module-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .module-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .module-text {
+            font-size: 11.5px;
+            line-height: 1.45;
+            color: var(--text-secondary);
+        }
+
+        /* Disclaimer */
+        .footer-note {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            font-size: 10.5px;
+            line-height: 1.55;
+            color: var(--text-muted);
+        }
+
+        .footer-note strong {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2088595861793111&ev=PageView&noscript=1"
+    /></noscript>
+
+    <main class="wrapper">
+        <div class="top-strip">
+            <span class="status-badge"><span class="status-dot"></span> Community Open</span>
+            <span>Free Educational Access</span>
+        </div>
+
+        <section class="profile-box">
+            <div class="avatar-wrap">
+                <div class="avatar-frame">
+                    <img
+                        src="https://vickymunacb.space/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-26-at-2.08.54-PM.jpeg"
+                        alt="Trade With Sudarshan"
+                        class="avatar-img"
+                    >
+                </div>
+                <div class="check-pill" title="Official Learning Page">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+
+            <h1 class="brand-title">Trade With Sudarshan</h1>
+            <div class="brand-tagline">Structured Market Learning</div>
+            <p class="hero-desc">
+                Practical notes on market basics, chart structure, and disciplined risk habits—shared in plain language for learners.
+            </p>
+        </section>
+
+        <div class="trust-row">
+            <div class="trust-item">
+                <div class="trust-val">?0 Fee</div>
+                <div class="trust-lbl">Channel Access</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-val">Daily</div>
+                <div class="trust-lbl">Study Notes</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-val">Risk-First</div>
+                <div class="trust-lbl">Approach</div>
+            </div>
+        </div>
+
+        <a
+            id="telegram-join"
+            href="https://t.me/+JpEX6kWl_gUwYmM1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="join-btn"
+        >
+            <i class="fa-brands fa-telegram fa-lg"></i>
+            <span>Join Official Telegram Channel</span>
+        </a>
+        <div class="join-note">Opens Telegram directly • Tap "Request to Join" once inside</div>
+
+        <div class="section-label">What You Will Study</div>
+        <div class="module-list">
+            <div class="module-card">
+                <div class="module-icon" style="background: rgba(16, 185, 129, 0.14); color: #34d399;">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <div class="module-title">Market Foundations</div>
+                    <div class="module-text">Understand index movement, liquidity, order types, and market sessions clearly.</div>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon" style="background: rgba(14, 165, 233, 0.14); color: #38bdf8;">
+                    <i class="fa-solid fa-chart-area"></i>
+                </div>
+                <div>
+                    <div class="module-title">Price Action & Chart Structure</div>
+                    <div class="module-text">Read trend context, key zones, and volume behavior without cluttered indicators.</div>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon" style="background: rgba(234, 179, 8, 0.14); color: #facc15;">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <div class="module-title">Position Sizing & Discipline</div>
+                    <div class="module-text">Focus on drawdown control, predefined invalidation, and emotional consistency.</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-note">
+            <strong>Disclaimer:</strong> Content is strictly for educational and informational purposes. This page is not a SEBI-registered investment advisory service. Stock and derivatives trading carries market risk; no guaranteed returns or personalized buy/sell calls are offered.
+        </footer>
+    </main>
+
+    <script>
+        (function () {
+            const joinLink = document.getElementById("telegram-join");
+            if (joinLink) {
+                joinLink.addEventListener("click", function () {
+                    if (typeof fbq === "function") {
+                        fbq("track", "Lead");
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>S
